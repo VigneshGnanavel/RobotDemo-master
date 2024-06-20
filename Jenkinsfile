@@ -1,5 +1,6 @@
 pipeline {
     agent any
+    
     stages {
         stage('Install') {
             steps {
@@ -13,14 +14,13 @@ pipeline {
         }
         stage('Publish Reports') {
             steps {
-               
-                junit 'results/output.xml'
-
+                junit 'C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\robot_pipeline\\results\\output.xml'
+                
                 publishHTML(target: [
                     allowMissing: false,
                     alwaysLinkToLastBuild: true,
                     keepAll: true,
-                    reportDir: 'results',
+                    reportDir: 'C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\robot_pipeline\\results',
                     reportFiles: 'report.html',
                     reportName: 'Robot Framework Report'
                 ])
