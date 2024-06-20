@@ -26,15 +26,16 @@ pipeline {
         }
         stage('Deploy to GitHub Pages') {
             steps {
-                
+                // Checkout the repository using the gitdemo_pat credentials
                 git credentialsId: 'gitdemo_pat', url: 'https://github.com/VigneshGnanavel/RobotDemo-master.git'
-            
+                
+                // Copy the HTML report to the repository
                 bat 'xcopy /s "C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\robot_pipeline\\results\\report.html" .\\docs\\'
                 
-    
+                // Push changes to GitHub
                 bat 'git add .'
                 bat 'git commit -m "Add Robot Framework report"'
-                bat 'git push origin results'
+                bat 'git push origin main'
             }
         }
     }
