@@ -40,7 +40,6 @@ pipeline {
                 
                 
                 bat 'git add .'
-                bat 'git commit -m "Automated commit"'
                 
                 bat 'git push origin results'
             }
