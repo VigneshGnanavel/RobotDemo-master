@@ -42,12 +42,9 @@ pipeline {
                     
                     bat 'git add -f "C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\robot_pipeline\\results\\output.xml"'
                     bat 'git add -f "C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\robot_pipeline\\results\\log.html"'
-                    
                     bat 'if exist "C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\robot_pipeline\\results\\report.html" git add -f "C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\robot_pipeline\\results\\report.html"'
        
                     bat 'git add .'
-                    
-                    bat 'git commit -m "Automated commit"'
                     
                     bat 'git push origin results'
                 }
