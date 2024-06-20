@@ -4,7 +4,10 @@ pipeline {
         stage('Install') {
             steps {
                 script {
-                    sh '''
+                    bat '''
+                    python -m venv venv
+                    venv\\Scripts\\activate
+                    pip install --upgrade pip
                     pip install robotframework
                     '''
                 }
@@ -12,9 +15,12 @@ pipeline {
         }
         stage('Build'){
             steps {
-                sh '''
-                robot --name Robot --loglevel DEBUG keyword_driven.robot data_driven.robot gherkin.robot
-                '''
+                script {
+                    bat '''
+                    venv\\Scripts\\activate
+                    robot --name Robot --loglevel DEBUG keyword_driven.robot data_driven.robot gherkin.robot
+                    '''
+                }
             }
         }
     }
