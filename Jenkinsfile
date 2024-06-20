@@ -1,22 +1,28 @@
 pipeline {
     agent any
+
     stages {
         stage('Install') {
             steps {
-                
                 bat 'pip install robotframework'
             }
         }
+
         stage('Build') {
             steps {
-                
+              
+                bat 'mkdir results'
+
                 bat 'robot --name Robot --loglevel DEBUG --outputdir results keyword_driven.robot data_driven.robot gherkin.robot'
             }
         }
+
         stage('Publish Reports') {
             steps {
-                junit 'robot_multi_main/*.xml'
-            
+                // Publish JUnit test results
+                junit 'results/*.xml'
+                
+                // Publish HTML report
                 publishHTML(target: [
                     allowMissing: false,
                     alwaysLinkToLastBuild: true,
