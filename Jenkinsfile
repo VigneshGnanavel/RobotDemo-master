@@ -29,19 +29,21 @@ pipeline {
         
         stage('Git Reports') {
             steps {
-                
                 script {
-                    bat 'git checkout -B results'
+                    bat 'git config --global user.name "VigneshGnanavel"'
+                    bat 'git config --global user.email "prathvikvignesh@gmail.com"'
+                  
+                    withCredentials([sshUserPrivateKey(credentialsId: 'jenkins_ssh', keyFileVariable: 'SSH_KEY')]) {
+                       
+                        bat 'git checkout results'
+                      
+                        bat 'git add results/output.xml results/report.xml results/log.xml'
+                    
+                        bat 'git add .'
+                        
+                        bat 'git push origin results'
+                    }
                 }
-                
-                
-                bat 'git config --global user.name "VigneshGnanavel"'
-                bat 'git config --global user.email "prathvikvignesh@gmail.com"'
-                
-                
-                bat 'git add .'
-                
-                bat 'git push origin results'
             }
         }
     }
