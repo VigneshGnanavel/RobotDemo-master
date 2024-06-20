@@ -14,8 +14,6 @@ pipeline {
         }
         stage('Publish Reports') {
             steps {
-                junit 'C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\robot_pipeline\\results\\output.xml'
-                
                 publishHTML(target: [
                     allowMissing: false,
                     alwaysLinkToLastBuild: true,
