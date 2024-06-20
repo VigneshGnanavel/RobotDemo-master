@@ -7,11 +7,13 @@ pipeline {
                 bat 'pip install robotframework'
             }
         }
+        
         stage('Build') {
             steps {
                 bat 'robot --name Robot --loglevel DEBUG --outputdir results keyword_driven.robot data_driven.robot gherkin.robot'
             }
         }
+        
         stage('Publish Reports') {
             steps {
                 publishHTML(target: [
@@ -22,11 +24,14 @@ pipeline {
                     reportFiles: 'report.html',
                     reportName: 'Robot Framework Report'
                 ])
-                 
-        stage('Git_reports') {
+            }
+        }
+        
+        stage('Git Reports') {
             steps {
                 bat 'git config --global user.name "VigneshGnanavel"'
                 bat 'git config --global user.email "prathvikvignesh@gmail.com"'
+                
                 script {
                     withCredentials([sshUserPrivateKey(credentialsId: 'jenkins_ssh', keyFileVariable: 'SSH_KEY')]) {
                         bat 'git add results'
