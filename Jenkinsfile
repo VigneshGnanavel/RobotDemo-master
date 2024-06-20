@@ -15,7 +15,7 @@ pipeline {
         }
         stage('Publish Reports') {
             steps {
-                junit 'results/*.xml'
+                junit 'robot_multi_main/*.xml'
             
                 publishHTML(target: [
                     allowMissing: false,
