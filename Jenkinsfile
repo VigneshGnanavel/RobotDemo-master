@@ -48,27 +48,4 @@ pipeline {
             }
         }
 
-        stage('Upload Results to Xray') {
-            steps {
-                withCredentials([usernamePassword(credentialsId: 'jira_id', passwordVariable: 'XRAY_CLIENT_SECRET', usernameVariable: 'XRAY_CLIENT_ID')]) {
-                    script {
-                        def xrayApiBaseUrl = 'https://xray.cloud.xpand-it.com'
-                        def junitFile = "C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\robot_pipeline\\results\\output.xml"
-
-                        def response = httpRequest(
-                            httpMode: 'POST',
-                            url: "${xrayApiBaseUrl}/api/v1/import/execution/junit",
-                            customHeaders: [
-                                [name: 'Authorization', value: "Bearer ${XRAY_CLIENT_ID}:${XRAY_CLIENT_SECRET}"],
-                                [name: 'Content-Type', value: 'application/xml']
-                            ],
-                            requestBody: readFile(junitFile)
-                        )
-
-                        echo "Xray response: ${response}"
-                    }
-                }
-            }
-        }
-    }
-}
+        
