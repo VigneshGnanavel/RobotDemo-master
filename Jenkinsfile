@@ -5,16 +5,13 @@ pipeline {
         stage('Install Dependencies') {
             steps {
                 bat 'pip install robotframework'
-                bat 'pip install robotframework-junitxml'
             }
         }
         
         stage('Run Tests') {
             steps {
                 bat 'robot --name Robot --loglevel DEBUG --outputdir results keyword_driven.robot data_driven.robot gherkin.robot'
-                // Convert output to JUnit XML
-                bat 'rebot --outputdir results --output results/output.xml --report results/report.html --log results/log.html'
-                bat 'python -m robot.jupyter junitxml --output results/output.xml --resultfile results/junit_output.xml'
+                 bat 'rebot --outputdir results --report NONE --log NONE --xunit results/output.xml results/output.xml'
             }
         }
         
@@ -57,7 +54,7 @@ pipeline {
                 withCredentials([usernamePassword(credentialsId: 'jira_id', passwordVariable: 'XRAY_CLIENT_SECRET', usernameVariable: 'XRAY_CLIENT_ID')]) {
                     script {
                         def xrayApiBaseUrl = 'https://xray.cloud.xpand-it.com'
-                        def junitFile = "C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\robot_pipeline\\results\\junit_output.xml"
+                        def junitFile = "C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\robot_pipeline\\results\\output.xml"
 
                         def response = httpRequest(
                             httpMode: 'POST',
