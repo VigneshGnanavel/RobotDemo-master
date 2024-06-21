@@ -11,7 +11,7 @@ pipeline {
         stage('Run Tests') {
             steps {
                 bat 'robot --name Robot --loglevel DEBUG --outputdir results keyword_driven.robot data_driven.robot gherkin.robot'
-                 bat 'rebot --outputdir results --report NONE --log NONE --xunit results/output.xml results/output.xml'
+            
             }
         }
         
