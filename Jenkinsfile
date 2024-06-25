@@ -61,7 +61,7 @@ pipeline {
                                 requestBody: fileContent,
                                 url: 'https://gnanavelvignesh183-1718958763592.atlassian.net/rest/api/2/import/execution/junit?testExecKey=TA-3',
                                 customHeaders: [
-                                    [name: 'Authorization'],
+                                    [name: 'Authorization' value: 'credentialsId'],
                                     [name: 'Content-Type', value: 'application/xml']
                                 ]
                             )
