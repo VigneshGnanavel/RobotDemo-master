@@ -42,15 +42,18 @@ pipeline {
 
                     bat 'git add -f "C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\robot_pipeline\\results\\output.xml"'
                     bat 'git add -f "C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\robot_pipeline\\results\\log.html"'
-
-                    bat 'if exist "C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\robot_pipeline\\results\\report.html" git add -f "C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\robot_pipeline\\results\\report.html"'
-
-                    bat 'git add .'
-
+                    bat  'git add -f "C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\robot_pipeline\\results\\report.html"'
                     
-
                     bat 'git push origin results'
                 }
+            }
+        }
+        stage('Xray Import') {
+            steps {
+                xrayResultImporter importFilePath: 'target/surefire-reports/TEST-calculatorTest.xml',
+                    serverInstance: 'XrayJiraInstance',
+                    testExecKey: 'TA-3',
+                    projectKey: 'TA'
             }
         }
     }
