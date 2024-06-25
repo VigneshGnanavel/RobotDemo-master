@@ -1,10 +1,5 @@
 pipeline {
     agent any
-
-    environment {
-        JIRA_AUTH_TOKEN = credentials('jenkins')
-    }
-
     stages {
         stage('Install') {
             steps {
