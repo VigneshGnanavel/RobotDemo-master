@@ -29,22 +29,17 @@ pipeline {
                     bat 'git config --global user.name "VigneshGnanavel"'
                     bat 'git config --global user.email "prathvikvignesh@gmail.com"'
                     
+                    // Add and commit changes
+                    bat 'git add results/log.html results/output.xml results/report.html'
+                    bat 'git commit -m "Committing changes"'
+                    
+                    // Checkout the branch
                     bat 'git checkout TA-3-junitresults'
                     
-                    bat 'dir "C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\robot_pipeline\\results"'
-                    
-                    bat 'git add -f "C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\robot_pipeline\\results\\log.html"'
-                    bat 'git add -f "C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\robot_pipeline\\results\\output.xml"'
-                    bat 'git add -f "C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\robot_pipeline\\results\\report.html"'
-                    
-       
-                    bat 'git add .'
-
-                    bat 'git commit -m "newbranchadded"'
-                    
+                    // Push changes to TA-3-junitresults branch
                     bat 'git push origin TA-3-junitresults'
                 }
             }
-        } 
-    } 
-} 
+        }
+    }
+}
