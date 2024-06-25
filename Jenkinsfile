@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        JIRA_AUTH_TOKEN = credentials('jenkins_token')
+        JIRA_AUTH_TOKEN = credentials('jenkins')
     }
 
     stages {
@@ -24,7 +24,7 @@ pipeline {
                     allowMissing: false,
                     alwaysLinkToLastBuild: true,
                     keepAll: true,
-                    reportDir: 'C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\robot_pipeline\\results',
+                    reportDir: 'results',
                     reportFiles: 'report.html',
                     reportName: 'Robot Framework Report'
                 ])
@@ -34,26 +34,12 @@ pipeline {
         stage('Xray Import') {
             steps {
                 script {
-                    def filePath = 'C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\robot_pipeline\\results\\output.xml'
-                    if (fileExists(filePath)) {
-                        def fileContent = readFile(filePath)
-                        withCredentials([string(credentialsId: 'jenkins_token', variable: 'JIRA_AUTH_TOKEN')]) {
-                            def response = httpRequest(
-                                acceptType: 'APPLICATION_JSON',
-                                contentType: 'APPLICATION_XML',
-                                httpMode: 'POST',
-                                requestBody: fileContent,
-                                url: 'https://gnanavelvignesh183-1718958763592.atlassian.net/rest/api/2/import/execution/junit?testExecKey=TA-3',
-                                customHeaders: [
-                                    [name: 'gnanavelvignesh@gmail.com', value: "Basic ${JIRA_AUTH_TOKEN}"],
-                                    [name: 'Content-Type', value: 'application/xml']
-                                ]
-                            )
-                            echo "Response: ${response.status} - ${response.content}"
-                        }
-                    } else {
-                        error "File not found: ${filePath}"
-                    }
+                    def filePath = 'results/output.xml'
+                    def fileContent = readFile(filePath)
+                    def issueKey = "TA-3"
+                    def jiraUrl = "https://gnanavelvignesh183-1718958763592.atlassian.net/rest/api/2/import/execution/${issueKey}"
+
+                    bat "curl -D- -u ${JIRA_AUTH_TOKEN} -X POST --data-binary @${filePath} -H 'Content-Type: application/xml' ${jiraUrl}"
                 }
             }
         }
