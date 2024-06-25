@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        JIRA_API_TOKEN = credentials('jenkins')
+        JIRA_AUTH_TOKEN = credentials('jenkins')
     }
 
     stages {
@@ -11,13 +11,11 @@ pipeline {
                 bat 'pip install robotframework'
             }
         }
-
         stage('Run Tests') {
             steps {
                 bat 'robot --name Robot --loglevel DEBUG --outputdir results keyword_driven.robot data_driven.robot gherkin.robot'
             }
         }
-
         stage('Publish Reports') {
             steps {
                 publishHTML(target: [
@@ -30,7 +28,6 @@ pipeline {
                 ])
             }
         }
-
         stage('Xray Import') {
             steps {
                 script {
@@ -38,7 +35,6 @@ pipeline {
                     def fileContent = readFile(filePath)
                     def issueKey = "TA-3"
                     def jiraUrl = "https://gnanavelvignesh183-1718958763592.atlassian.net/rest/api/2/import/execution/${issueKey}"
-                    
                     bat "curl -D- -u $JIRA_AUTH_TOKEN -X POST --data-binary @$filePath -H 'Content-Type: application/xml' $jiraUrl"
                 }
             }
