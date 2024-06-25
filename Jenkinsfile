@@ -45,6 +45,7 @@ pipeline {
                     bat 'git add -f "C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\robot_pipeline\\results\\log.html"'
                     bat 'git add -f "C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\robot_pipeline\\results\\report.html"'
                     
+                    bat 'git commit -m "Add test results"'
                     bat 'git push origin results'
                 }
             }
@@ -53,11 +54,12 @@ pipeline {
         stage('Xray Import') {
             steps {
                 script {
+                    def fileContent = readFile('C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\robot_pipeline\\results\\output.xml')
                     def response = httpRequest(
                         acceptType: 'APPLICATION_JSON',
                         contentType: 'APPLICATION_XML',
                         httpMode: 'POST',
-                        requestBody: readFile('C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\robot_pipeline\\results\\output.xml'),
+                        requestBody: fileContent,
                         url: 'https://gnanavelvignesh183-1718958763592.atlassian.net/rest/api/2/import/execution/junit?testExecKey=TA-3',
                         customHeaders: [
                             [name: 'Authorization', value: "Basic ${env.JIRA_AUTH_TOKEN}"],
