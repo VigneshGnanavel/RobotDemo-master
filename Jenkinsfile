@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        JIRA_AUTH_TOKEN = credentials('jenkins')
+        JIRA_AUTH_TOKEN = credentials('jenkins_token')
     }
 
     stages {
