@@ -37,8 +37,9 @@ pipeline {
        
                     bat 'git add .'
                     
-                    bat 'git push origin results'
+                    bat 'git push origin TA-3-junitresults'
                 }
             }
-        }
-       
+        } 
+    } 
+} 
