@@ -33,9 +33,14 @@ pipeline {
                     
                     bat 'dir "C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\robot_pipeline\\results"'
                     
+                    bat 'git add -f "C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\robot_pipeline\\results\\log.html"'
                     bat 'git add -f "C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\robot_pipeline\\results\\output.xml"'
+                    bat 'git add -f "C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\robot_pipeline\\results\\report.html"'
+                    
        
                     bat 'git add .'
+
+                    bat 'git commit -m "newbranchadded"'
                     
                     bat 'git push origin TA-3-junitresults'
                 }
