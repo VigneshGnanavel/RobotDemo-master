@@ -37,7 +37,7 @@ pipeline {
                     def filePath = 'C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\robot_pipeline\\results\\output.xml'
                     if (fileExists(filePath)) {
                         def fileContent = readFile(filePath)
-                        withCredentials([string(credentialsId: 'jenkins_token')]) {
+                        withCredentials([string(credentialsId: 'jenkins_token', variable: 'JIRA_AUTH_TOKEN')]) {
                             def response = httpRequest(
                                 acceptType: 'APPLICATION_JSON',
                                 contentType: 'APPLICATION_XML',
