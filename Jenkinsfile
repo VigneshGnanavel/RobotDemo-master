@@ -36,7 +36,7 @@ pipeline {
                     bat 'git config --global user.name "VigneshGnanavel"'
                     bat 'git config --global user.email "prathvikvignesh@gmail.com"'
                     
-                    bat 'git checkout results'
+                    bat 'git checkout -b results'
                     
                     bat 'dir "C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\robot_pipeline\\results"'
 
