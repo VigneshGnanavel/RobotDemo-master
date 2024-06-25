@@ -26,27 +26,6 @@ pipeline {
                 ])
             }
         }
-
-        stage('Git Commit and Push') {
-            steps {
-                script {
-                    bat 'git config --global user.name "VigneshGnanavel"'
-                    bat 'git config --global user.email "prathvikvignesh@gmail.com"'
-
-                    bat 'git checkout results'
-
-                    bat 'dir "C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\robot_pipeline\\results"'
-
-                    bat 'git add -f "C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\robot_pipeline\\results\\output.xml"'
-                    bat 'git add -f "C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\robot_pipeline\\results\\log.html"'
-                    bat 'git add -f "C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\robot_pipeline\\results\\report.html"'
-
-                    bat 'git commit -m "Add test results"'
-                    bat 'git push origin results'
-                }
-            }
-        }
-
         stage('Xray Import') {
             steps {
                 script {
