@@ -36,7 +36,7 @@ pipeline {
                     bat 'git config --global user.name "VigneshGnanavel"'
                     bat 'git config --global user.email "prathvikvignesh@gmail.com"'
                     
-                    bat 'git checkout results'
+                    bat 'git checkout TA-3-junitresults'
                     
                     bat 'dir "C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\robot_pipeline\\results"'
                     
@@ -46,7 +46,7 @@ pipeline {
        
                     bat 'git add .'
                     
-                    bat 'git push origin results'
+                    bat 'git push origin TA-3-junitresults'
                 }
             }
         }
