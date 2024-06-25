@@ -5,6 +5,7 @@ pipeline {
         JIRA_BASE_URL = 'https://gnanavelvignesh183-1718958763592.atlassian.net'
         JIRA_PROJECT_KEY = 'TA' 
         JIRA_ISSUE_KEY = 'TA-3'
+        JIRA_API_TOKEN = credentials('jenkins')
     }
 
     stages {
@@ -39,7 +40,7 @@ pipeline {
                     def filePath = 'results/output.xml'
                     def jiraUrl = "${JIRA_BASE_URL}/rest/api/2/import/execution/${issueKey}"
 
-                    bat "curl -D- -u $jenkins -X POST --data-binary @$filePath -H 'Content-Type: application/xml' $jiraUrl"
+                    bat "curl -D- -u $JIRA_API_TOKEN -X POST --data-binary @$filePath -H 'Content-Type: application/xml' $jiraUrl"
                 }
             }
         }
