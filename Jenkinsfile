@@ -57,7 +57,7 @@ pipeline {
                         acceptType: 'APPLICATION_JSON',
                         contentType: 'APPLICATION_XML',
                         httpMode: 'POST',
-                        requestBody: readFile('C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\robot_pipeline\\results\\.xml'),
+                        requestBody: readFile('C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\robot_pipeline\\results\\output.xml'),
                         url: 'https://gnanavelvignesh183-1718958763592.atlassian.net/rest/api/2/import/execution/junit?testExecKey=TA-3',
                         customHeaders: [
                             [name: 'Authorization', value: "Basic ${env.JIRA_AUTH_TOKEN}"],
