@@ -1,6 +1,8 @@
 pipeline {
     agent any
-    
+    environment {
+        JIRA_AUTH_TOKEN = credentials('jira_new')
+    }
     stages {
         stage('Install Dependencies') {
             steps {
@@ -36,7 +38,7 @@ pipeline {
                     bat 'git config --global user.name "VigneshGnanavel"'
                     bat 'git config --global user.email "prathvikvignesh@gmail.com"'
                     
-                    bat 'git checkout -B results'
+                    bat 'git checkout results'
                     
                     bat 'dir "C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\robot_pipeline\\results"'
 
@@ -47,11 +49,20 @@ pipeline {
 
                     bat 'git add .'
 
-                    bat 'git commit -m "Automated commit"'
-
                     bat 'git push origin results'
                 }
             }
         }
+        stage('Xray Import') {
+            steps {
+                script {
+                    def filePath = 'C:/ProgramData/Jenkins/.jenkins/workspace/robot_pipeline/results/output.xml'
+                    def issueKey = "TA-3"
+                    def jiraUrl = "https://gnanavelvignesh183-1718958763592.atlassian.net/rest/api/2/import/execution/${issueKey}"
+                    bat "curl -D- -u $JIRA_AUTH_TOKEN -X POST --data-binary @$filePath -H \"Content-Type: application/xml\" $jiraUrl"
+                }
+            }
+        }
+
     }
 }
