@@ -38,7 +38,7 @@ pipeline {
                     bat 'git config --global user.name "VigneshGnanavel"'
                     bat 'git config --global user.email "prathvikvignesh@gmail.com"'
                     
-                    bat 'git checkout results'
+                    bat 'git checkout -B results'
                     
                     bat 'dir "C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\robot_pipeline\\results"'
 
@@ -48,6 +48,8 @@ pipeline {
                     bat 'if exist "C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\robot_pipeline\\results\\report.html" git add -f "C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\robot_pipeline\\results\\report.html"'
 
                     bat 'git add .'
+
+                    bat 'git commit -m "inital commit"'
 
                     bat 'git push origin results'
                 }
