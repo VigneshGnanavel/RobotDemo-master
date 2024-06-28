@@ -1,96 +1,96 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.0.1 (Python 3.12.4 on win32)" generated="2024-06-21T10:18:38.504748" rpa="false" schemaversion="5">
+<robot generator="Robot 7.0.1 (Python 3.12.4 on win32)" generated="2024-06-28T11:53:08.565194" rpa="false" schemaversion="5">
 <suite id="s1" name="Robot">
 <suite id="s1-s1" name="Keyword Driven" source="C:\ProgramData\Jenkins\.jenkins\workspace\robot_pipeline\keyword_driven.robot">
 <test id="s1-s1-t1" name="Push button" line="16">
 <kw name="Push Button" owner="CalculatorLibrary">
 <arg>1</arg>
 <doc>Pushes the specified ``button``.</doc>
-<status status="PASS" start="2024-06-21T10:18:38.554844" elapsed="0.000000"/>
+<status status="PASS" start="2024-06-28T11:53:08.625912" elapsed="0.000000"/>
 </kw>
 <kw name="Result Should Be" owner="CalculatorLibrary">
 <arg>1</arg>
 <doc>Verifies that the current result is ``expected``.</doc>
-<status status="PASS" start="2024-06-21T10:18:38.554844" elapsed="0.000000"/>
+<status status="PASS" start="2024-06-28T11:53:08.626426" elapsed="0.000000"/>
 </kw>
-<status status="PASS" start="2024-06-21T10:18:38.553838" elapsed="0.002225"/>
+<status status="PASS" start="2024-06-28T11:53:08.613113" elapsed="0.013313"/>
 </test>
 <test id="s1-s1-t2" name="Push multiple buttons" line="20">
 <kw name="Push Button" owner="CalculatorLibrary">
 <arg>1</arg>
 <doc>Pushes the specified ``button``.</doc>
-<status status="PASS" start="2024-06-21T10:18:38.556063" elapsed="0.000000"/>
+<status status="PASS" start="2024-06-28T11:53:08.626426" elapsed="0.000000"/>
 </kw>
 <kw name="Push Button" owner="CalculatorLibrary">
 <arg>2</arg>
 <doc>Pushes the specified ``button``.</doc>
-<status status="PASS" start="2024-06-21T10:18:38.557126" elapsed="0.000000"/>
+<status status="PASS" start="2024-06-28T11:53:08.626426" elapsed="0.001409"/>
 </kw>
 <kw name="Result Should Be" owner="CalculatorLibrary">
 <arg>12</arg>
 <doc>Verifies that the current result is ``expected``.</doc>
-<status status="PASS" start="2024-06-21T10:18:38.557126" elapsed="0.000000"/>
+<status status="PASS" start="2024-06-28T11:53:08.627835" elapsed="0.000000"/>
 </kw>
-<status status="PASS" start="2024-06-21T10:18:38.556063" elapsed="0.001063"/>
+<status status="PASS" start="2024-06-28T11:53:08.626426" elapsed="0.001409"/>
 </test>
 <test id="s1-s1-t3" name="Simple calculation" line="25">
 <kw name="Push Button" owner="CalculatorLibrary">
 <arg>1</arg>
 <doc>Pushes the specified ``button``.</doc>
-<status status="PASS" start="2024-06-21T10:18:38.558125" elapsed="0.000000"/>
+<status status="PASS" start="2024-06-28T11:53:08.628361" elapsed="0.000000"/>
 </kw>
 <kw name="Push Button" owner="CalculatorLibrary">
 <arg>+</arg>
 <doc>Pushes the specified ``button``.</doc>
-<status status="PASS" start="2024-06-21T10:18:38.558125" elapsed="0.000000"/>
+<status status="PASS" start="2024-06-28T11:53:08.628361" elapsed="0.000000"/>
 </kw>
 <kw name="Push Button" owner="CalculatorLibrary">
 <arg>2</arg>
 <doc>Pushes the specified ``button``.</doc>
-<status status="PASS" start="2024-06-21T10:18:38.558125" elapsed="0.000000"/>
+<status status="PASS" start="2024-06-28T11:53:08.628361" elapsed="0.000000"/>
 </kw>
 <kw name="Push Button" owner="CalculatorLibrary">
 <arg>=</arg>
 <doc>Pushes the specified ``button``.</doc>
-<status status="PASS" start="2024-06-21T10:18:38.558125" elapsed="0.000000"/>
+<status status="PASS" start="2024-06-28T11:53:08.628361" elapsed="0.000000"/>
 </kw>
 <kw name="Result Should Be" owner="CalculatorLibrary">
 <arg>3</arg>
 <doc>Verifies that the current result is ``expected``.</doc>
-<status status="PASS" start="2024-06-21T10:18:38.559147" elapsed="0.000000"/>
+<status status="PASS" start="2024-06-28T11:53:08.629393" elapsed="0.000000"/>
 </kw>
-<status status="PASS" start="2024-06-21T10:18:38.557126" elapsed="0.002021"/>
+<status status="PASS" start="2024-06-28T11:53:08.628361" elapsed="0.001032"/>
 </test>
 <test id="s1-s1-t4" name="Longer calculation" line="32">
 <kw name="Push Buttons" owner="CalculatorLibrary">
 <arg>5 + 4 - 3 * 2 / 1 =</arg>
 <doc>Pushes the specified ``buttons``.</doc>
-<status status="PASS" start="2024-06-21T10:18:38.559147" elapsed="0.000980"/>
+<status status="PASS" start="2024-06-28T11:53:08.631374" elapsed="0.000000"/>
 </kw>
 <kw name="Result Should Be" owner="CalculatorLibrary">
 <arg>3</arg>
 <doc>Verifies that the current result is ``expected``.</doc>
-<status status="PASS" start="2024-06-21T10:18:38.560127" elapsed="0.000000"/>
+<status status="PASS" start="2024-06-28T11:53:08.631374" elapsed="0.000000"/>
 </kw>
-<status status="PASS" start="2024-06-21T10:18:38.559147" elapsed="0.000980"/>
+<status status="PASS" start="2024-06-28T11:53:08.630375" elapsed="0.000999"/>
 </test>
 <test id="s1-s1-t5" name="Clear" line="36">
 <kw name="Push Button" owner="CalculatorLibrary">
 <arg>1</arg>
 <doc>Pushes the specified ``button``.</doc>
-<status status="PASS" start="2024-06-21T10:18:38.560127" elapsed="0.000000"/>
+<status status="PASS" start="2024-06-28T11:53:08.632374" elapsed="0.000000"/>
 </kw>
 <kw name="Push Button" owner="CalculatorLibrary">
 <arg>C</arg>
 <doc>Pushes the specified ``button``.</doc>
-<status status="PASS" start="2024-06-21T10:18:38.561147" elapsed="0.000000"/>
+<status status="PASS" start="2024-06-28T11:53:08.632374" elapsed="0.000000"/>
 </kw>
 <kw name="Result Should Be" owner="CalculatorLibrary">
 <arg>${EMPTY}</arg>
 <doc>Verifies that the current result is ``expected``.</doc>
-<status status="PASS" start="2024-06-21T10:18:38.561147" elapsed="0.000000"/>
+<status status="PASS" start="2024-06-28T11:53:08.632374" elapsed="0.001004"/>
 </kw>
-<status status="PASS" start="2024-06-21T10:18:38.560127" elapsed="0.001020"/>
+<status status="PASS" start="2024-06-28T11:53:08.632374" elapsed="0.001004"/>
 </test>
 <doc>Example test cases using the keyword-driven testing approach.
 
@@ -103,7 +103,7 @@ automation, but the _gherkin_ style might be even better
 if also business people need to understand tests. If the
 same workflow needs to repeated multiple times, it is best
 to use to the _data-driven_ approach.</doc>
-<status status="PASS" start="2024-06-21T10:18:38.547794" elapsed="0.014333"/>
+<status status="PASS" start="2024-06-28T11:53:08.607591" elapsed="0.025787"/>
 </suite>
 <suite id="s1-s2" name="Data Driven" source="C:\ProgramData\Jenkins\.jenkins\workspace\robot_pipeline\data_driven.robot">
 <test id="s1-s2-t1" name="Addition" line="17">
@@ -111,216 +111,216 @@ to use to the _data-driven_ approach.</doc>
 <kw name="Push Buttons" owner="CalculatorLibrary">
 <arg>C${expression}=</arg>
 <doc>Pushes the specified ``buttons``.</doc>
-<status status="PASS" start="2024-06-21T10:18:38.568372" elapsed="0.000000"/>
+<status status="PASS" start="2024-06-28T11:53:08.638476" elapsed="0.000999"/>
 </kw>
 <kw name="Result Should Be" owner="CalculatorLibrary">
 <arg>${expected}</arg>
 <doc>Verifies that the current result is ``expected``.</doc>
-<status status="PASS" start="2024-06-21T10:18:38.568372" elapsed="0.000000"/>
+<status status="PASS" start="2024-06-28T11:53:08.639475" elapsed="0.000000"/>
 </kw>
 <arg>12 + 2 + 2</arg>
 <arg>16</arg>
-<status status="PASS" start="2024-06-21T10:18:38.567121" elapsed="0.001251"/>
+<status status="PASS" start="2024-06-28T11:53:08.638476" elapsed="0.000999"/>
 </kw>
 <kw name="Calculate">
 <kw name="Push Buttons" owner="CalculatorLibrary">
 <arg>C${expression}=</arg>
 <doc>Pushes the specified ``buttons``.</doc>
-<status status="PASS" start="2024-06-21T10:18:38.569383" elapsed="0.000000"/>
+<status status="PASS" start="2024-06-28T11:53:08.640472" elapsed="0.000000"/>
 </kw>
 <kw name="Result Should Be" owner="CalculatorLibrary">
 <arg>${expected}</arg>
 <doc>Verifies that the current result is ``expected``.</doc>
-<status status="PASS" start="2024-06-21T10:18:38.569383" elapsed="0.000000"/>
+<status status="PASS" start="2024-06-28T11:53:08.640472" elapsed="0.000000"/>
 </kw>
 <arg>2 + -3</arg>
 <arg>-1</arg>
-<status status="PASS" start="2024-06-21T10:18:38.569383" elapsed="0.000000"/>
+<status status="PASS" start="2024-06-28T11:53:08.639475" elapsed="0.000997"/>
 </kw>
-<status status="PASS" start="2024-06-21T10:18:38.567121" elapsed="0.002262"/>
+<status status="PASS" start="2024-06-28T11:53:08.637476" elapsed="0.002996"/>
 </test>
 <test id="s1-s2-t2" name="Subtraction" line="20">
 <kw name="Calculate">
 <kw name="Push Buttons" owner="CalculatorLibrary">
 <arg>C${expression}=</arg>
 <doc>Pushes the specified ``buttons``.</doc>
-<status status="PASS" start="2024-06-21T10:18:38.570388" elapsed="0.001008"/>
+<status status="PASS" start="2024-06-28T11:53:08.641472" elapsed="0.000000"/>
 </kw>
 <kw name="Result Should Be" owner="CalculatorLibrary">
 <arg>${expected}</arg>
 <doc>Verifies that the current result is ``expected``.</doc>
-<status status="PASS" start="2024-06-21T10:18:38.571396" elapsed="0.000000"/>
+<status status="PASS" start="2024-06-28T11:53:08.641472" elapsed="0.001004"/>
 </kw>
 <arg>12 - 2 - 2</arg>
 <arg>8</arg>
-<status status="PASS" start="2024-06-21T10:18:38.570388" elapsed="0.001008"/>
+<status status="PASS" start="2024-06-28T11:53:08.641472" elapsed="0.001004"/>
 </kw>
 <kw name="Calculate">
 <kw name="Push Buttons" owner="CalculatorLibrary">
 <arg>C${expression}=</arg>
 <doc>Pushes the specified ``buttons``.</doc>
-<status status="PASS" start="2024-06-21T10:18:38.571396" elapsed="0.000000"/>
+<status status="PASS" start="2024-06-28T11:53:08.642476" elapsed="0.000000"/>
 </kw>
 <kw name="Result Should Be" owner="CalculatorLibrary">
 <arg>${expected}</arg>
 <doc>Verifies that the current result is ``expected``.</doc>
-<status status="PASS" start="2024-06-21T10:18:38.571396" elapsed="0.001162"/>
+<status status="PASS" start="2024-06-28T11:53:08.642476" elapsed="0.001158"/>
 </kw>
 <arg>2 - -3</arg>
 <arg>5</arg>
-<status status="PASS" start="2024-06-21T10:18:38.571396" elapsed="0.001162"/>
+<status status="PASS" start="2024-06-28T11:53:08.642476" elapsed="0.001158"/>
 </kw>
-<status status="PASS" start="2024-06-21T10:18:38.570388" elapsed="0.002170"/>
+<status status="PASS" start="2024-06-28T11:53:08.640472" elapsed="0.003162"/>
 </test>
 <test id="s1-s2-t3" name="Multiplication" line="23">
 <kw name="Calculate">
 <kw name="Push Buttons" owner="CalculatorLibrary">
 <arg>C${expression}=</arg>
 <doc>Pushes the specified ``buttons``.</doc>
-<status status="PASS" start="2024-06-21T10:18:38.573075" elapsed="0.000000"/>
+<status status="PASS" start="2024-06-28T11:53:08.644734" elapsed="0.000000"/>
 </kw>
 <kw name="Result Should Be" owner="CalculatorLibrary">
 <arg>${expected}</arg>
 <doc>Verifies that the current result is ``expected``.</doc>
-<status status="PASS" start="2024-06-21T10:18:38.573075" elapsed="0.000000"/>
+<status status="PASS" start="2024-06-28T11:53:08.644734" elapsed="0.000526"/>
 </kw>
 <arg>12 * 2 * 2</arg>
 <arg>48</arg>
-<status status="PASS" start="2024-06-21T10:18:38.573075" elapsed="0.000000"/>
+<status status="PASS" start="2024-06-28T11:53:08.643634" elapsed="0.001626"/>
 </kw>
 <kw name="Calculate">
 <kw name="Push Buttons" owner="CalculatorLibrary">
 <arg>C${expression}=</arg>
 <doc>Pushes the specified ``buttons``.</doc>
-<status status="PASS" start="2024-06-21T10:18:38.574085" elapsed="0.000000"/>
+<status status="PASS" start="2024-06-28T11:53:08.645260" elapsed="0.000000"/>
 </kw>
 <kw name="Result Should Be" owner="CalculatorLibrary">
 <arg>${expected}</arg>
 <doc>Verifies that the current result is ``expected``.</doc>
-<status status="PASS" start="2024-06-21T10:18:38.574085" elapsed="0.000000"/>
+<status status="PASS" start="2024-06-28T11:53:08.645260" elapsed="0.000000"/>
 </kw>
 <arg>2 * -3</arg>
 <arg>-6</arg>
-<status status="PASS" start="2024-06-21T10:18:38.574085" elapsed="0.000000"/>
+<status status="PASS" start="2024-06-28T11:53:08.645260" elapsed="0.000000"/>
 </kw>
-<status status="PASS" start="2024-06-21T10:18:38.572558" elapsed="0.001527"/>
+<status status="PASS" start="2024-06-28T11:53:08.643634" elapsed="0.002654"/>
 </test>
 <test id="s1-s2-t4" name="Division" line="26">
 <kw name="Calculate">
 <kw name="Push Buttons" owner="CalculatorLibrary">
 <arg>C${expression}=</arg>
 <doc>Pushes the specified ``buttons``.</doc>
-<status status="PASS" start="2024-06-21T10:18:38.575083" elapsed="0.000000"/>
+<status status="PASS" start="2024-06-28T11:53:08.646288" elapsed="0.000000"/>
 </kw>
 <kw name="Result Should Be" owner="CalculatorLibrary">
 <arg>${expected}</arg>
 <doc>Verifies that the current result is ``expected``.</doc>
-<status status="PASS" start="2024-06-21T10:18:38.575083" elapsed="0.000000"/>
+<status status="PASS" start="2024-06-28T11:53:08.647292" elapsed="0.000000"/>
 </kw>
 <arg>12 / 2 / 2</arg>
 <arg>3</arg>
-<status status="PASS" start="2024-06-21T10:18:38.575083" elapsed="0.001003"/>
+<status status="PASS" start="2024-06-28T11:53:08.646288" elapsed="0.001004"/>
 </kw>
 <kw name="Calculate">
 <kw name="Push Buttons" owner="CalculatorLibrary">
 <arg>C${expression}=</arg>
 <doc>Pushes the specified ``buttons``.</doc>
-<status status="PASS" start="2024-06-21T10:18:38.576086" elapsed="0.000000"/>
+<status status="PASS" start="2024-06-28T11:53:08.647292" elapsed="0.000000"/>
 </kw>
 <kw name="Result Should Be" owner="CalculatorLibrary">
 <arg>${expected}</arg>
 <doc>Verifies that the current result is ``expected``.</doc>
-<status status="PASS" start="2024-06-21T10:18:38.576086" elapsed="0.000000"/>
+<status status="PASS" start="2024-06-28T11:53:08.647292" elapsed="0.000000"/>
 </kw>
 <arg>2 / -3</arg>
 <arg>-1</arg>
-<status status="PASS" start="2024-06-21T10:18:38.576086" elapsed="0.000000"/>
+<status status="PASS" start="2024-06-28T11:53:08.647292" elapsed="0.000000"/>
 </kw>
-<status status="PASS" start="2024-06-21T10:18:38.575083" elapsed="0.001003"/>
+<status status="PASS" start="2024-06-28T11:53:08.646288" elapsed="0.002004"/>
 </test>
 <test id="s1-s2-t5" name="Failing" line="29">
 <kw name="Calculate">
 <kw name="Push Buttons" owner="CalculatorLibrary">
 <arg>C${expression}=</arg>
 <doc>Pushes the specified ``buttons``.</doc>
-<status status="PASS" start="2024-06-21T10:18:38.577083" elapsed="0.000000"/>
+<status status="PASS" start="2024-06-28T11:53:08.648292" elapsed="0.000000"/>
 </kw>
 <kw name="Result Should Be" owner="CalculatorLibrary">
 <arg>${expected}</arg>
 <doc>Verifies that the current result is ``expected``.</doc>
-<status status="PASS" start="2024-06-21T10:18:38.578097" elapsed="0.000000"/>
+<status status="PASS" start="2024-06-28T11:53:08.649292" elapsed="0.000000"/>
 </kw>
 <arg>1 + 1</arg>
 <arg>2</arg>
-<status status="PASS" start="2024-06-21T10:18:38.577083" elapsed="0.001014"/>
+<status status="PASS" start="2024-06-28T11:53:08.648292" elapsed="0.001000"/>
 </kw>
-<status status="PASS" start="2024-06-21T10:18:38.577083" elapsed="0.001014"/>
+<status status="PASS" start="2024-06-28T11:53:08.648292" elapsed="0.001000"/>
 </test>
 <test id="s1-s2-t6" name="Calculation error" line="31">
 <kw name="Calculation should fail">
 <kw name="Should Cause Error" owner="CalculatorLibrary">
-<msg time="2024-06-21T10:18:38.579221" level="INFO">${error} = Invalid button 'k'.</msg>
+<msg time="2024-06-28T11:53:08.650292" level="INFO">${error} = Invalid button 'k'.</msg>
 <var>${error}</var>
 <arg>C${expression}=</arg>
 <doc>Verifies that calculating the given ``expression`` causes an error.</doc>
-<status status="PASS" start="2024-06-21T10:18:38.578097" elapsed="0.001124"/>
+<status status="PASS" start="2024-06-28T11:53:08.649292" elapsed="0.001000"/>
 </kw>
 <kw name="Should Be Equal" owner="BuiltIn">
-<msg time="2024-06-21T10:18:38.579221" level="DEBUG">Argument types are:
+<msg time="2024-06-28T11:53:08.650292" level="DEBUG">Argument types are:
 &lt;class 'str'&gt;
 &lt;class 'str'&gt;</msg>
 <arg>${expected}</arg>
 <arg>${error}</arg>
 <doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" start="2024-06-21T10:18:38.579221" elapsed="0.000000"/>
+<status status="PASS" start="2024-06-28T11:53:08.650292" elapsed="0.000000"/>
 </kw>
 <arg>kekkonen</arg>
 <arg>Invalid button 'k'.</arg>
-<status status="PASS" start="2024-06-21T10:18:38.578097" elapsed="0.001124"/>
+<status status="PASS" start="2024-06-28T11:53:08.649292" elapsed="0.001000"/>
 </kw>
 <kw name="Calculation should fail">
 <kw name="Should Cause Error" owner="CalculatorLibrary">
-<msg time="2024-06-21T10:18:38.580243" level="INFO">${error} = Invalid expression.</msg>
+<msg time="2024-06-28T11:53:08.651292" level="INFO">${error} = Invalid expression.</msg>
 <var>${error}</var>
 <arg>C${expression}=</arg>
 <doc>Verifies that calculating the given ``expression`` causes an error.</doc>
-<status status="PASS" start="2024-06-21T10:18:38.580243" elapsed="0.000000"/>
+<status status="PASS" start="2024-06-28T11:53:08.651292" elapsed="0.000000"/>
 </kw>
 <kw name="Should Be Equal" owner="BuiltIn">
-<msg time="2024-06-21T10:18:38.581245" level="DEBUG">Argument types are:
+<msg time="2024-06-28T11:53:08.651292" level="DEBUG">Argument types are:
 &lt;class 'str'&gt;
 &lt;class 'str'&gt;</msg>
 <arg>${expected}</arg>
 <arg>${error}</arg>
 <doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" start="2024-06-21T10:18:38.580243" elapsed="0.001002"/>
+<status status="PASS" start="2024-06-28T11:53:08.651292" elapsed="0.000000"/>
 </kw>
 <arg>${EMPTY}</arg>
 <arg>Invalid expression.</arg>
-<status status="PASS" start="2024-06-21T10:18:38.579221" elapsed="0.002024"/>
+<status status="PASS" start="2024-06-28T11:53:08.650292" elapsed="0.001000"/>
 </kw>
 <kw name="Calculation should fail">
 <kw name="Should Cause Error" owner="CalculatorLibrary">
-<msg time="2024-06-21T10:18:38.581245" level="INFO">${error} = Division by zero.</msg>
+<msg time="2024-06-28T11:53:08.652292" level="INFO">${error} = Division by zero.</msg>
 <var>${error}</var>
 <arg>C${expression}=</arg>
 <doc>Verifies that calculating the given ``expression`` causes an error.</doc>
-<status status="PASS" start="2024-06-21T10:18:38.581245" elapsed="0.000000"/>
+<status status="PASS" start="2024-06-28T11:53:08.652292" elapsed="0.000000"/>
 </kw>
 <kw name="Should Be Equal" owner="BuiltIn">
-<msg time="2024-06-21T10:18:38.581245" level="DEBUG">Argument types are:
+<msg time="2024-06-28T11:53:08.652292" level="DEBUG">Argument types are:
 &lt;class 'str'&gt;
 &lt;class 'str'&gt;</msg>
 <arg>${expected}</arg>
 <arg>${error}</arg>
 <doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" start="2024-06-21T10:18:38.581245" elapsed="0.001000"/>
+<status status="PASS" start="2024-06-28T11:53:08.652292" elapsed="0.000000"/>
 </kw>
 <arg>1 / 0</arg>
 <arg>Division by zero.</arg>
-<status status="PASS" start="2024-06-21T10:18:38.581245" elapsed="0.001000"/>
+<status status="PASS" start="2024-06-28T11:53:08.652292" elapsed="0.000000"/>
 </kw>
-<status status="PASS" start="2024-06-21T10:18:38.578097" elapsed="0.004148"/>
+<status status="PASS" start="2024-06-28T11:53:08.649292" elapsed="0.003000"/>
 </test>
 <doc>Example test cases using the data-driven testing approach.
 
@@ -333,7 +333,7 @@ is the last test that has a custom _template keyword_.
 
 Notice that one of these tests fails on purpose to show how
 failures look like.</doc>
-<status status="PASS" start="2024-06-21T10:18:38.562127" elapsed="0.020118"/>
+<status status="PASS" start="2024-06-28T11:53:08.634671" elapsed="0.018621"/>
 </suite>
 <suite id="s1-s3" name="Gherkin" source="C:\ProgramData\Jenkins\.jenkins\workspace\robot_pipeline\gherkin.robot">
 <test id="s1-s3-t1" name="Addition" line="16">
@@ -341,35 +341,35 @@ failures look like.</doc>
 <kw name="Push Button" owner="CalculatorLibrary">
 <arg>C</arg>
 <doc>Pushes the specified ``button``.</doc>
-<status status="PASS" start="2024-06-21T10:18:38.587769" elapsed="0.000000"/>
+<status status="PASS" start="2024-06-28T11:53:08.657275" elapsed="0.001022"/>
 </kw>
-<status status="PASS" start="2024-06-21T10:18:38.587769" elapsed="0.000000"/>
+<status status="PASS" start="2024-06-28T11:53:08.657275" elapsed="0.001022"/>
 </kw>
 <kw name="When user types &quot;1 + 1&quot;" source_name="User types &quot;${expression}&quot;">
 <kw name="Push Buttons" owner="CalculatorLibrary">
 <arg>${expression}</arg>
 <doc>Pushes the specified ``buttons``.</doc>
-<status status="PASS" start="2024-06-21T10:18:38.587769" elapsed="0.000000"/>
+<status status="PASS" start="2024-06-28T11:53:08.658297" elapsed="0.000000"/>
 </kw>
-<status status="PASS" start="2024-06-21T10:18:38.587769" elapsed="0.001009"/>
+<status status="PASS" start="2024-06-28T11:53:08.658297" elapsed="0.000000"/>
 </kw>
 <kw name="and user pushes equals">
 <kw name="Push Button" owner="CalculatorLibrary">
 <arg>=</arg>
 <doc>Pushes the specified ``button``.</doc>
-<status status="PASS" start="2024-06-21T10:18:38.588778" elapsed="0.000000"/>
+<status status="PASS" start="2024-06-28T11:53:08.659504" elapsed="0.000000"/>
 </kw>
-<status status="PASS" start="2024-06-21T10:18:38.588778" elapsed="0.000000"/>
+<status status="PASS" start="2024-06-28T11:53:08.659504" elapsed="0.000000"/>
 </kw>
 <kw name="Then result is &quot;2&quot;" source_name="Result is &quot;${result}&quot;">
 <kw name="Result Should Be" owner="CalculatorLibrary">
 <arg>${result}</arg>
 <doc>Verifies that the current result is ``expected``.</doc>
-<status status="PASS" start="2024-06-21T10:18:38.588778" elapsed="0.001301"/>
+<status status="PASS" start="2024-06-28T11:53:08.660649" elapsed="0.000000"/>
 </kw>
-<status status="PASS" start="2024-06-21T10:18:38.588778" elapsed="0.001301"/>
+<status status="PASS" start="2024-06-28T11:53:08.659504" elapsed="0.001145"/>
 </kw>
-<status status="PASS" start="2024-06-21T10:18:38.586357" elapsed="0.003722"/>
+<status status="PASS" start="2024-06-28T11:53:08.656292" elapsed="0.004357"/>
 </test>
 <doc>Example test case using the gherkin syntax.
 
@@ -382,9 +382,9 @@ This kind of _gherkin_ syntax has been made popular by
 [http://cukes.info|Cucumber]. It works well especially when
 tests act as examples that need to be easily understood also
 by the business people.</doc>
-<status status="PASS" start="2024-06-21T10:18:38.583248" elapsed="0.006831"/>
+<status status="PASS" start="2024-06-28T11:53:08.653292" elapsed="0.007882"/>
 </suite>
-<status status="PASS" start="2024-06-21T10:18:38.506056" elapsed="0.084023"/>
+<status status="PASS" start="2024-06-28T11:53:08.567193" elapsed="0.095009"/>
 </suite>
 <statistics>
 <total>
