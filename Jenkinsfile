@@ -60,7 +60,7 @@ pipeline {
                 script {
                     def filePath = 'C:/ProgramData/Jenkins/.jenkins/workspace/robot_pipeline/results/output.xml'
                     def issueKey = "TA-8"
-                    def jiraUrl = "https://gnanavelvignesh124.atlassian.net/rest/api/2/import/execution/$issueKey"
+                    def jiraUrl = "https://gnanavelvignesh124.atlassian.net/jira/software/projects/TA/boards/2?selectedIssue=$issueKey"
                     bat "curl -D- -u $JIRA_AUTH_TOKEN -X POST --data-binary @$filePath -H \"Content-Type: application/xml\" $jiraUrl"
                 }
             }
