@@ -39,8 +39,6 @@ pipeline {
                     
                     bat 'git checkout -B results'
                     
-                    bat 'dir "results"'
-                    
                     bat 'git add -f "results/output.xml"'
                     bat 'git add -f "results/log.html"'
                     
@@ -56,10 +54,9 @@ pipeline {
         stage('Upload Artifact to Artifactory') {
             steps {
                 script {
-                    bat "jfrog rt upload --url http://172.17.208.1:8082/artifactory/ --access-token ${ARTIFACTORY_ACCESS_TOKEN} results/output.xml results/"
+                    bat "jf rt upload --url http://172.17.208.1:8082/artifactory/ --access-token ${ARTIFACTORY_ACCESS_TOKEN} results/output.xml results/"
                 }
             }
         }
     }
 }
-
