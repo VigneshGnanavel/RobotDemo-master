@@ -3,6 +3,7 @@ pipeline {
     
     environment {
         ARTIFACTORY_ACCESS_TOKEN = credentials('artifactory-access-token')
+        PATH = "${tool 'Maven'}/bin:${env.PATH}"
     }
     
     stages {
