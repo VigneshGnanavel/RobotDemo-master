@@ -2,8 +2,10 @@ pipeline {
     agent any
     
     environment {
+        CI = true
         ARTIFACTORY_ACCESS_TOKEN = credentials('artifactory-access-token')
-        PATH = "${tool 'Maven'}/bin:${env.PATH}"
+        JAVA_HOME = 'C:\\Program Files\\Eclipse Adoptium\\jdk-11.0.23.9-hotspot'
+        PATH = "${env.JAVA_HOME}\\bin;${env.PATH}"
     }
     
     stages {
@@ -29,26 +31,6 @@ pipeline {
                     reportFiles: 'report.html',
                     reportName: 'Robot Framework Report'
                 ])
-            }
-        }
-        
-        stage('Git Commit and Push') {
-            steps {
-                script {
-                    bat 'git config --global user.name "VigneshGnanavel"'
-                    bat 'git config --global user.email "prathvikvignesh@gmail.com"'
-                    
-                    bat 'git checkout -B results'
-                    
-                    bat 'git add -f "results/output.xml"'
-                    bat 'git add -f "results/log.html"'
-                    
-                    bat 'if exist "results/report.html" git add -f "results/report.html"'
-                    
-                    bat 'git commit -m "Initial commit"'
-                    
-                    bat 'git push origin results'
-                }
             }
         }
         
